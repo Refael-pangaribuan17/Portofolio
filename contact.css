@@ -1,0 +1,243 @@
+/* General Styles */
+body {
+    background: #2d2e32;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+.nav-bar {
+    background: #1f1f25; /* Background color for navbar */
+    padding: 10px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-bar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffaf29; /* Yellow for the logo */
+    text-decoration: none;
+}
+
+.nav-bar .menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-bar .menu .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-bar .menu .nav-links li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: color 0.3s, background 0.3s;
+}
+
+.nav-bar .menu .nav-links li a:hover {
+    background: #64f4ab;
+    color: #2d2e32;
+    border-radius: 5px;
+}
+
+
+/* Contact Section */
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 40px;
+}
+
+.left-section {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.contact-heading h3 {
+    font-size: 18px;
+    color: #64faab;
+}
+
+.touch-heading h1 {
+    font-size: 38px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.description p {
+    font-size: 18px;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.email-div,
+.phone-div {
+    flex: 1;
+}
+
+.email-div h3,
+.phone-div h3 {
+    font-size: 18px;
+    color: #64faab;
+}
+
+.email-div p,
+.phone-div p {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+/* Form Styling */
+.right-section {
+    flex: 1;
+}
+
+.styled-input {
+    margin: 15px 0;
+    position: relative;
+}
+
+input,
+textarea {
+    padding: 15px 20px;
+    border: 2px solid #64f4ab;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #25262a;
+    color: white;
+    border-radius: 10px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #ffaf29;
+    outline: none;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+/* Button Styling */
+.conbtn {
+    background-color: #ffaf29;
+    color: #25262a;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+    max-width: 150px;
+}
+
+.conbtn:hover {
+    background-color: #e69e23;
+    transform: scale(1.05);
+}
+
+/* Notification Styling */
+#notification {
+    display: none;
+    color: #64faab;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    background-color: #25262a;
+    border: 1px solid #64faab;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .left-section,
+    .right-section {
+        flex: none;
+        width: 100%;
+        padding: 0;
+    }
+
+    .contact-info {
+        flex-direction: column;
+    }
+
+    .email-div,
+    .phone-div {
+        margin-bottom: 15px;
+    }
+
+    .conbtn {
+        max-width: 100%;
+    }
+}
+/* Success Notification */
+#notification {
+    display: none;
+    color: #64faab;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    background-color: #25262a;
+    border: 1px solid #64faab;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Error Notification */
+#errorNotification {
+    display: none;
+    color: #ff4d4d;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    background-color: #25262a;
+    border: 1px solid #ff4d4d;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+

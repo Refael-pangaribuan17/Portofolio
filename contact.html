@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #2d2e32; font-family: 'Poppins', sans-serif; color: white; margin: 0; padding: 0;">
+
+    <!-- Navigation Bar -->
+    <nav style="background-color: #1f1f25; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center;">
+        <div style="font-size: 24px; color: #ffaf29; font-weight: bold;">My Profile</div>
+        <ul style="display: flex; list-style: none; gap: 20px; margin: 0; padding: 0;">
+            <li><a href="index1.html" style="color: white; text-decoration: none;">Home</a></li>
+            <li><a href="contact.html" style="color: white; text-decoration: none;">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contact Section -->
+    <div style="padding: 50px 30px; max-width: 1200px; margin: 0 auto; display: flex; gap: 50px;">
+        <!-- Left Section -->
+        <div style="flex: 1;">
+            <h3 style="color: #64FAAB; margin-bottom: 10px;">--Contact Me</h3>
+            <h1 style="font-size: 36px; margin-bottom: 20px;">Get in touch with me</h1>
+            <p style="line-height: 1.6; margin-bottom: 30px;">
+                The technological revolution is changing aspects of our lives and the fabric of society itself. It's
+                also changing the way we learn and what we learn. Factual knowledge is less prized when everything
+                you ever need to know can be found on your phone.
+            </p>
+            <div>
+                <p><strong>Email:</strong> refaelpangaribuan123@gmail.com</p>
+                <p><strong>Phone:</strong> 082277197440</p>
+            </div>
+        </div>
+
+        <!-- Right Section -->
+        <div style="flex: 1;">
+            <form id="contactForm">
+                <div style="margin-bottom: 20px;">
+                    <input type="text" id="fullName" placeholder="Full Name" required style="width: 100%; padding: 10px; border-radius: 5px; border: 2px solid #64f4ab; background-color: #25262A; color: white;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <input type="email" id="email" placeholder="Email" required style="width: 100%; padding: 10px; border-radius: 5px; border: 2px solid #64f4ab; background-color: #25262A; color: white;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <textarea id="message" placeholder="Message" required style="width: 100%; padding: 10px; border-radius: 5px; border: 2px solid #64f4ab; background-color: #25262A; color: white; min-height: 120px;"></textarea>
+                </div>
+                <button type="button" id="sendBtn" style="padding: 10px 20px; background-color: #ffaf29; color: #25262A; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
+                    Send to me
+                </button>
+            </form>
+            <div id="notification" style="display: none; margin-top: 20px; color: #64FAAB; font-weight: bold;">
+                Message has been sent!
+            </div>
+            <div id="errorNotification" style="display: none; margin-top: 20px; color: #ff4d4d; font-weight: bold;">
+                All fields must be filled!
+            </div>
+        </div>
+        
+        <script>
+            document.getElementById("sendBtn").addEventListener("click", function() {
+                const fullName = document.getElementById("fullName").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const message = document.getElementById("message").value.trim();
+        
+                const notification = document.getElementById("notification");
+                const errorNotification = document.getElementById("errorNotification");
+        
+                // Reset notifications
+                notification.style.display = "none";
+                errorNotification.style.display = "none";
+        
+                if (fullName === "" || email === "" || message === "") {
+                    // Show error notification
+                    errorNotification.style.display = "block";
+        
+                    // Hide error after 3 seconds
+                    setTimeout(function() {
+                        errorNotification.style.display = "none";
+                    }, 3000);
+                } else {
+                    // Show success notification
+                    notification.style.display = "block";
+        
+                    // Clear input fields
+                    document.getElementById("fullName").value = "";
+                    document.getElementById("email").value = "";
+                    document.getElementById("message").value = "";
+        
+                    // Hide success after 3 seconds
+                    setTimeout(function() {
+                        notification.style.display = "none";
+                    }, 3000);
+                }
+            });
+        </script>
+        
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Title -->
+    <title>Refael Pangaribuan - Portfolio</title>
+</head>
+
+<body style="background-color: #2d2e32; font-family: 'Poppins', sans-serif;">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-bar">
+            <span class="logo">My Profile</span>
+            <div class="menu">
+                <ul class="nav-links">
+                    <li><a href="index1.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Hero Section -->
+    <section class="intro-section">
+        <div class="intro-container">
+            <div class="intro-left">
+                <img src="profile.png" alt="Profile Picture">
+            </div>
+            <div class="intro-right">
+                <h2>-- Introduction</h2>
+                <h1>Hello, I'm <br><span>Refael Pangaribuan</span></h1>
+                <p class="typed-text"></p>
+            </div>
+        </div>
+        <script>
+            const typedText = document.querySelector('.typed-text');
+            const textArray = [
+                'I am a D3 Computer Technology student,',
+                'studying at IT Del,',
+                'I am interested in DevOps and also,',
+                'Cyber Security,'
+            ];
+            let textIndex = 0;
+            let charIndex = 0;
+        
+            function typeText() {
+                if (charIndex < textArray[textIndex].length) {
+                    typedText.textContent += textArray[textIndex].charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeText, 100);
+                } else {
+                    setTimeout(deleteText, 1000); // Tunggu sebelum menghapus
+                }
+            }
+        
+            function deleteText() {
+                if (charIndex > 0) {
+                    typedText.textContent = textArray[textIndex].substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(deleteText, 100);
+                } else {
+                    textIndex = (textIndex + 1) % textArray.length;
+                    setTimeout(typeText, 500); // Tunggu sebelum mengetik ulang
+                }
+            }
+        
+            document.addEventListener('DOMContentLoaded', typeText);
+        </script>
+        
+    </section>
+    
+
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <div class="container">
+            <h2 style="color: #64f4ab;">-- My Skills</h2>
+            <p>During my studies, I focused on several areas including Internet of Things, Cloud Computing, Cyber Security, Networking and Virtualization.</p>
+            <a href="cv.pdf" download class="btn-secondary">Download CV</a>
+        </div>
+    </section>
+
+    <section class="projects-section">
+        <div class="container">
+            <h2 style="color: #64f4ab;">-- Projects</h2>
+            <div class="project-cards">
+                <div class="card">
+                    <h3>Internet of Things</h3>
+                    <div class="description">
+                        <b>Gas And Fire Detector.</b>
+                        <p>An Internet of Things (IoT) system for gas and fire detection that utilizes IoT devices to monitor and detect potential fire hazards or gas leaks in real-time. This system integrates a network of smart sensors, such as gas detectors and smoke/fire alarms, connected to a central platform via the internet. The IoT devices continuously monitor the environment for any signs of gas leaks (e.g., natural gas or carbon monoxide) or fire risks (e.g., smoke or elevated temperatures).
+
+                            When a gas leak or fire hazard is detected, the IoT system immediately triggers an alert, which can be sent to a smartphone, tablet, or computer, enabling users to take quick action. Additionally, the system may include automated responses, such as activating ventilation systems, shutting off gas valves, or sounding alarms, to mitigate risks before they escalate into serious problems.
+                            
+                            The IoT-enabled gas and fire detection system can also be integrated with other smart home or industrial automation systems, providing a comprehensive approach to safety management. By leveraging IoT technology, this system ensures real-time monitoring, enhances safety measures, and provides peace of mind by allowing for immediate intervention in case of emergencies.</p>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleDescription(this)">Read More</button>
+                </div>
+                <div class="card">
+                    <h3>SolidWorks</h3>
+                    <div class="description">
+                        <b>Metal and non-metal sorting bins</b>
+                        <p>The design of a trash can using SolidWorks that effectively separates metal and non-metal waste materials, aiming to enhance waste management and recycling processes. This innovative trash can features a dual-compartment system where the metal waste and non-metal waste are sorted automatically or manually into separate bins, making recycling more efficient and organized.
+
+                            In the SolidWorks design process, the trash can is equipped with a set of internal compartments or partitioned sections, each tailored for specific types of waste. The metal compartment can be lined with materials that attract metal objects, such as magnets or electrostatic elements, which will automatically pull in metallic items. Non-metal materials, such as plastics, paper, or organic waste, would be directed to another section that does not contain magnetic elements.
+                            
+                            The design may also include an intuitive user interface, such as color-coded bins or labels, to guide users in properly disposing of their waste. SolidWorks allows for precise modeling of these components, ensuring that the trash can is both functional and easy to manufacture.
+                            
+                            The trash can may also incorporate features such as a lid with an automatic opening mechanism for hands-free disposal, sensors to detect when the bin is full, and a foot pedal for easier operation. Additionally, the design can include considerations for ergonomics, durability, and ease of maintenance, ensuring that the product is suitable for both residential and commercial use.
+                            
+                            SolidWorks offers advanced simulation tools that can test the design for structural integrity and functionality, ensuring that the sorting bins are reliable, safe, and effective for long-term use. The final product not only simplifies waste disposal but also supports sustainable practices by encouraging proper recycling of materials.</p>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleDescription(this)">Read More</button>
+                </div>
+                <div class="card">
+                    <h3>Wordpress</h3>
+                    <div class="description">
+                       <b>Toba Health</b>
+                       <p>A website created using WordPress that provides comprehensive health service information for 
+                        the regions of Balige, Laguboti, Sigumpar, and Laguboti. This platform serves as a central hub 
+                        for information related to various health facilities in the area, including hospitals, clinics, 
+                        health centers, polyclinics, pharmacies, and other healthcare providers. The website aims to offer 
+                        users easy access to essential details such as contact information, services provided, operating hours,
+                        and location maps. In addition, the website may feature user reviews, appointment scheduling options, 
+                        and health-related news or updates specific to the mentioned regions. By centralizing this information, 
+                        the website helps improve accessibility to healthcare resources and promotes better health management for the local community.</p>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleDescription(this)">Read More</button>
+                </div>
+                <div class="card">
+                    <h3>Web Development</h3>
+                    <div class="description">
+                        <b>Scholl Website</b>
+                        <p>
+                            Web development for a school website built using PHP focuses on creating a user-friendly, dynamic, and interactive platform that caters to the needs of students, teachers, parents, and administrators. The website serves as a comprehensive online resource for all school-related information, providing essential functionalities to improve communication, resource sharing, and administrative processes.
+                            
+                            Using PHP, the backend of the website can be designed to handle a variety of tasks, such as managing student records, grades, timetables, and attendance. PHP allows the integration of a database (like MySQL) to store and retrieve important data efficiently, making it easier for administrators to update or manage school-related content.</p>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleDescription(this)">Read More</button>
+                </div>
+                <div class="card">
+                    <h3>Web Development</h3>
+                    <div class="description">
+                        <b>Hotel Booking using Laravel</b>
+                        <p>A hotel booking system developed using Laravel provides a powerful, secure, and efficient platform for managing reservations, guest information, room availability, and payment processes. Laravel, known for its clean syntax and robust features, is an ideal framework for building a comprehensive and scalable hotel booking system. The platform includes user authentication and role management, allowing guests, hotel staff, and administrators to access the system securely with varying levels of permissions. Guests can easily register, log in, and manage their accounts, while hotel staff and administrators can manage bookings and room availability.
+
+                            booking management system that lets users check available rooms for their desired dates. Laravel's Eloquent ORM helps manage room data, including room types, prices, and availability. The platform also offers a booking calendar that dynamically updates based on real-time room availability, showing only available dates to guests. Users can filter room availability by date, room type, or price range to ensure a seamless booking experience.
+                            
+                            Room details and pricing are displayed clearly on individual room pages, which include information such as room type, amenities, and price per night. Laravel’s Blade templating engine enables easy integration of these dynamic elements. Additionally, the system can support multiple payment options, including online payment gateways, and provide automatic confirmation emails once a booking is completed. The backend ensures smooth booking management, including booking history, cancellations, and modifications, while keeping everything synchronized and secure. This hotel booking system provides a streamlined and efficient process for both guests and hotel management, enhancing the overall user experience.</p>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleDescription(this)">Read More</button>
+                </div>
+                <div class="card">
+                    <h3>Simple Game</h3>
+                    <div class="description">
+                        <b>Magic Square C Language</b>
+                        <p>A Magic Square game for two players, developed in C language, is an interactive and competitive game where each player takes turns filling a 3x3 grid with numbers from 1 to 9, aiming to create a magic square. In a 3x3 magic square, the sum of each row, column, and diagonal must equal 15. The game begins with an empty grid, and players alternate selecting a number to place in an empty spot. The game ensures that each number is unique and between 1 and 9, providing input validation to prevent players from choosing a number that has already been placed or selecting an occupied spot.
+
+                            Players are prompted to enter the number they wish to place and the grid position, and the game checks if the move is valid. The game continues until one player successfully arranges the numbers in such a way that every row, column, and diagonal sums to 15, thereby completing the magic square. At that point, the game ends, and the winner is declared. If all spots are filled without a winner, the game results in a draw. The game logic ensures smooth gameplay by managing turn-taking, checking for winning conditions, and displaying the updated grid after each move, providing an engaging challenge for both players.</p>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleDescription(this)">Read More</button>
+                </div>
+                <div class="card">
+                    <h3>Virtualization</h3>
+                    <div class="description">
+                        <b>Ansible</b>
+                        <p>I successfully completed a comprehensive project that integrated the use of Ansible, Docker, Kubernetes, and Minikube to automate server configuration, streamline container setup, and manage orchestration within a simulated environment. The project began with the implementation of Ansible to automate the configuration of servers, ensuring that the underlying infrastructure was consistent and ready to support containerized applications. Using Ansible playbooks, repetitive tasks such as installing dependencies, setting up networking, and configuring environment variables were automated, saving time and reducing the risk of manual errors.
+
+                            Next, Docker was employed to containerize applications, enabling them to run seamlessly across different environments. Custom Dockerfiles were created to package applications with all their dependencies, ensuring portability and consistency. Docker Compose was also used to define and manage multi-container applications during the development and testing phases, providing a clear and efficient workflow.
+                            
+                            Kubernetes was then utilized for container orchestration, allowing the deployment, scaling, and management of containers across multiple nodes in the simulated environment. With Minikube, a lightweight Kubernetes implementation, I was able to create a local development environment that mimicked real-world Kubernetes clusters. This setup included defining Kubernetes manifests for pods, services, and deployments to ensure proper resource allocation, load balancing, and fault tolerance.
+                            
+                            The project also focused on the seamless integration of these tools to achieve a fully automated and orchestrated pipeline. For example, Ansible playbooks were used to provision Kubernetes clusters on Minikube, while Docker images were directly integrated into Kubernetes deployments for containerized workloads. The orchestration setup ensured high availability, scalability, and ease of management, replicating real-world deployment scenarios.
+                            
+                            By completing this project, I gained hands-on experience in automating infrastructure management, containerization, and orchestration. It highlighted the importance of combining tools like Ansible, Docker, Kubernetes, and Minikube to build efficient, reliable, and scalable systems that can adapt to dynamic application requirements in both simulated and real-world environments.</p>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleDescription(this)">Read More</button>
+                </div>
+                <div class="card">
+                    <h3>Simple Game</h3>
+                    <div class="description">
+                        <b>Tic Tac Toe</b>
+                        <p>A Tic Tac Toe game developed in C language is a simple but engaging implementation of the classic two-player game where players take turns placing "X" and "O" on a 3x3 grid. The goal is to be the first to get three marks in a row, either horizontally, vertically, or diagonally. The game starts with an empty grid, which is represented as a 2D array in C. Each player alternates between Player 1 (who plays "X") and Player 2 (who plays "O"), choosing a number between 1 and 9 corresponding to an empty spot on the grid. The program checks if the chosen spot is available and prompts the player to choose again if the spot is already taken.
+
+                            The game includes input validation to ensure that players enter valid numbers within the range and only choose unoccupied positions. After each move, the program updates the grid and checks whether the current player has won by achieving three consecutive marks in a row, column, or diagonal. If a player achieves this, they win the game, and the program announces the winner. If all spots on the grid are filled and no player has won, the game ends in a draw. The program runs in a loop, continuously alternating between players and checking for winning or draw conditions until the game is over. This implementation not only provides a fun, interactive experience but also reinforces concepts such as arrays, loops, conditional statements, and user input handling in C programming.</p>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleDescription(this)">Read More</button>
+                </div>
+                
+            </div>
+            <button class="read-more-btn" onclick="toggleDescription(this)">Read More</button>
+            <!-- GitHub Button with Icon -->
+            <a href="https://github.com/Refael-pangaribuan17" class="github-btn" target="_blank">
+                <i class="fab fa-github"></i> See on GitHub
+            </a>
+        </div>
+        </div>
+    </section>
+    
+    
+    <script>
+function toggleDescription(button) {
+    const card = button.closest('.card'); // Ambil elemen card
+    const description = card.querySelector('.description'); // Ambil elemen description
+
+    if (description.classList.contains('expanded')) {
+        description.classList.remove('expanded'); // Tutup deskripsi
+        button.textContent = 'Read More'; // Ubah teks tombol
+    } else {
+        // Tutup deskripsi lainnya
+        const allDescriptions = document.querySelectorAll('.description.expanded');
+        allDescriptions.forEach((desc) => {
+            desc.classList.remove('expanded');
+            const relatedButton = desc.parentElement.querySelector('.read-more-btn');
+            if (relatedButton) relatedButton.textContent = 'Read More';
+        });
+
+        // Buka deskripsi ini
+        description.classList.add('expanded'); // Perluas deskripsi
+        button.textContent = 'Read Less'; // Ubah teks tombol
+    }
+}
+
+    </script>
+    
+    <!-- About Me Section -->
+    <section class="about-me-section">
+        <h2>-- About Me</h2>
+        <div class="about-me-container">
+            <div class="about-left">
+                <img src="gambar1.png" alt="Profile Picture">
+            </div>
+            <div class="about-right">
+                <p>Hello! My name is Refael Pangaribuan. I am a student at IT Del, pursuing my passion in technology and innovation. With a focus on IoT, Web Development, and Cybersecurity, I strive to create impactful solutions through creative problem-solving.</p>
+                <p>I love collaborating on challenging projects and constantly learning new things to expand my skillset. Feel free to reach out if you'd like to collaborate on a project or discuss ideas!</p>
+            </div>
+        </div>
+    </section>
+<!-- Social Media Section -->
+<section class="social-media-section">
+    <h2 style="color: #64f4ab;">-- Let's be friends</h2>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/refaelpangaribuan" target="_blank" class="social-link">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="www.linkedin.com/in/refael-pangaribuan-257a06272" target="_blank" class="social-link">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://web.facebook.com/fallqa" target="_blank" class="social-link">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://github.com/Refael-pangaribuan17" target="_blank" class="social-link">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://wa.me/qr/YINTPL3OM6VIP1" target="_blank" class="social-link">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href=" https://discord.gg/VgdAAwj4" target="_blank" class="social-link">
+            <i class="fab fa-discord"></i>
+        </a>
+    </div>
+</section>
+
+
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Refael Pangaribuan - D3 Computer Technology</p>
+        </div>
+    </footer>
+</body>
+
+</html>
